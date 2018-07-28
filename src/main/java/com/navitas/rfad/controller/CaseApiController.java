@@ -9,6 +9,7 @@ import com.navitas.rfad.model.CaseApiModel;
 import com.navitas.rfad.repository.CaseApiRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
@@ -27,8 +28,8 @@ public class CaseApiController {
     }
 
     @GetMapping(value = "/caseapi/{caseId}")
-    public ResponseEntity<CaseApiModel> findById(@PathVariable Integer caseId) {
-        return new ResponseEntity<CaseApiModel>(HttpStatus.OK);
+    public ResponseEntity<Optional<CaseApiModel>> findById(@PathVariable Integer caseId) {
+        return new ResponseEntity<Optional<CaseApiModel>>(caseApiRepository.findById(caseId), HttpStatus.OK);
     }
 
     @GetMapping(value = "/caseapi")

@@ -1,6 +1,7 @@
 package com.navitas.rfad.model;
 
 import java.sql.Timestamp;
+import java.util.UUID;
 
 import javax.persistence.*;
 
@@ -20,10 +21,10 @@ public class CaseApiModel {
 	private String benefitApplied;
     
 	@Column(name="created_by", nullable=false)
-    private Integer createdBy;
+    private UUID createdBy;
     
 	@Column(name="updated_by")
-    private Integer updatedBy;
+    private UUID updatedBy;
     
 	@Column(name="first_name", nullable=false)
     private String firstName;
@@ -48,7 +49,7 @@ public class CaseApiModel {
 	
 	public CaseApiModel() {}
 
-	public CaseApiModel(String caseTitle, String benefitApplied, Integer createdBy, Integer updatedBy, String firstName,
+	public CaseApiModel(String caseTitle, String benefitApplied, UUID createdBy, UUID updatedBy, String firstName,
 			String lastName, String city, String address, String state) {
 		super();
 		this.caseTitle = caseTitle;
@@ -86,19 +87,19 @@ public class CaseApiModel {
 		this.benefitApplied = benefitApplied;
 	}
 
-	public Integer getCreatedBy() {
+	public UUID getCreatedBy() {
 		return createdBy;
 	}
 
-	public void setCreatedBy(Integer createdBy) {
+	public void setCreatedBy(UUID createdBy) {
 		this.createdBy = createdBy;
 	}
 
-	public Integer getUpdatedBy() {
+	public UUID getUpdatedBy() {
 		return updatedBy;
 	}
 
-	public void setUpdatedBy(Integer updatedBy) {
+	public void setUpdatedBy(UUID updatedBy) {
 		this.updatedBy = updatedBy;
 	}
 

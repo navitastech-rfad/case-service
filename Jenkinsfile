@@ -280,6 +280,16 @@ pipeline {
                     reportFiles: '*.html',
                     reportName: "PMD Report"
                     ])
+
+                    publishHTML (target: [
+                    allowMissing: false,
+                    alwaysLinkToLastBuild: false,
+                    keepAll: true,
+                    reportDir: 'build/reports',
+                    reportFiles: 'dependency-check-report.html',
+                    reportName: "Dependency Check Report"
+                    ])
+                    	
         }
 
         failure { 

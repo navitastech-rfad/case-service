@@ -58,7 +58,7 @@ pipeline {
                         },
                          "Security Test ": {
                             script {
-                                sh '/gradlew dependencyCheckAnalyze'
+                                sh './gradlew dependencyCheckAnalyze'
                             }
                         }
                         

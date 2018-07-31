@@ -57,7 +57,9 @@ pipeline {
                                     }
                         },
                          "Security Test ": {
-                            echo 'Run integration testing'
+                            script {
+                                sh '/gradlew dependencyCheckAnalyze'
+                            }
                         }
                         
                 )

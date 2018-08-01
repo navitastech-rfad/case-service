@@ -184,7 +184,7 @@ pipeline {
 
             steps {
 
-              sh 'ecs-deploy  -c DevAppCluster -n caseapi -i 550522744793.dkr.ecr.us-east-1.amazonaws.com/userapi:${BUILD_NUMBER} -r us-east-1 -t 120'
+              sh 'ecs-deploy  -c DevAppCluster -n caseapi -i 550522744793.dkr.ecr.us-east-1.amazonaws.com/userapi:${BUILD_NUMBER} -r us-east-1 -t 420'
 
             }
         

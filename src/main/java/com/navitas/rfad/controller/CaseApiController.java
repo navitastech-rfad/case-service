@@ -22,28 +22,28 @@ public class CaseApiController {
         this.caseApiRepository = caseApiRepository;
     }
 
-    @PostMapping(value = "/caseapi")
+    @PostMapping(value = "/case")
     public ResponseEntity<CaseApiModel> create(@RequestBody CaseApiModel caseApiModel) {
         return new ResponseEntity<>(caseApiRepository.save(caseApiModel), HttpStatus.CREATED);
     }
 
-    @GetMapping(value = "/caseapi/{caseId}")
+    @GetMapping(value = "/case/{caseId}")
     public ResponseEntity<Optional<CaseApiModel>> findById(@PathVariable Integer caseId) {
         return new ResponseEntity<Optional<CaseApiModel>>(caseApiRepository.findById(caseId), HttpStatus.OK);
     }
 
-    @GetMapping(value = "/caseapi")
+    @GetMapping(value = "/case")
     public ResponseEntity<List<CaseApiModel>> findAll() {
         return new ResponseEntity<>((List<CaseApiModel>) caseApiRepository.findAll(), HttpStatus.OK);
     }
 
-    @PutMapping(value = "/caseapi/{caseId}")
+    @PutMapping(value = "/case/{caseId}")
     public ResponseEntity<CaseApiModel> update(@PathVariable Integer caseId, @RequestBody CaseApiModel caseApiModel) {
         caseApiModel.setCaseId(caseId);
         return new ResponseEntity<>(caseApiRepository.save(caseApiModel), HttpStatus.OK);
     }
 
-    @DeleteMapping(value = "/caseapi/{caseId}")
+    @DeleteMapping(value = "/case/{caseId}")
     public HttpStatus delete(@PathVariable Integer caseId) {
         caseApiRepository.deleteById(caseId);
         return HttpStatus.OK;
